@@ -1,0 +1,44 @@
+.homepage-outer {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  .recent-posts {
+    text-align: center;
+    margin-top: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-title {
+    text-align: center;
+    display: block;
+    border-radius: 3px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .social-icons {
+    text-align: center;
+    font-size: 1.3em;
+    letter-spacing: 20px;
+    margin-top: 20px;
+  }
+
+  .home-content {
+    text-align: center;
+  }
+}
+
+@include mediaMd {
+  .homepage-outer {
+    width: 50%;
+    min-width: 700px;
+    max-width: 80%;
+  }
+
+  .recent-posts {
+    width: 80%;
+  }
+}

@@ -1,0 +1,8 @@
+<a class="post_thumbnail" href="{{.Permalink}}">
+    {{ if isset .Params "featured_image" }}
+      <img class="post_thumbnail_image" src="{{ .Params.featured_image }}">
+    {{ end }}
+  <div class="post_thumbnail_title">
+    <h4> {{ .Title }} </h4>
+  </div>
+</a>

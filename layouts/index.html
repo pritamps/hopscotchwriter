@@ -1,0 +1,34 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<main aria-role="main">
+  <div class="homepage-outer">
+    <div id="hero">
+      {{ with .Site.GetPage "/home" }}
+      <div class="hero_image">
+        <figure><img src="{{ .Params.featured_image }}"></figure>
+      </div>
+      <h1 class="site-title"> {{ .Title }}</h1>
+
+      {{ partial "social-icons.html" . }}
+
+      <div class="home-content">
+        {{ .Content }}
+      </div>
+      {{end}}
+    </div>
+
+    <div class="recent-posts">
+      <h1> Most Recent Posts </h1>
+
+      For all the posts (arranged chronologically), go to the <a href="/posts">blog</a> section.
+
+      <!-- <h1 class="post-title">{{ .Title }}</h1> -->
+      <div class="post-thumbnails">
+        {{ range first 3 .Pages }}
+        {{ partial "post_thumbnail.html" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</main>
+{{ partial "footer.html" . }}

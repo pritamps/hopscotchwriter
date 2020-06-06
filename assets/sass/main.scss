@@ -1,0 +1,191 @@
+@import "config";
+@import "menu";
+
+
+main {
+  margin-top: 3em;
+}
+
+body {
+  font-family: monospace;
+  font-size: 13pt;
+  background: $darkest-grey;
+  color: $light-grey;
+  margin: 0;
+  line-height: 1.5;
+}
+
+// For MathJax equations
+code.has-jax {font: inherit;
+  font-size: 100%;  
+  background: inherit;
+  border: inherit;
+  color: $light-grey;
+}
+
+// ---- POST FORMATTING BEGIN ----
+#post-outer {
+  width: 100%;
+  // padding-top: 4em;
+  margin: 0 auto;
+  background: linear-gradient($darker-grey, $darkest-grey 800px);
+  padding-left: 0em;
+  padding-right: 0em;
+  border: 1px solid $dark-grey;
+  border-radius: 10px;
+
+  hr {
+    width: 40%;
+    border: 1px solid $darker-grey;
+  }
+
+
+  img {
+    display: block;
+    width: 100%;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    border: 1px solid $light-grey;
+    border-radius: 5px;
+  }
+
+  figure {
+    margin: 0;
+    margin-bottom: 3em;
+    margin-top: 2em;
+  }
+
+  p, .highlight {
+    line-height: 1.5;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+  }
+
+  figcaption {
+    font-size: 0.9em;
+    font-style: italic;
+    text-align: center;
+    margin: 0 1.5em;
+  }
+
+  a {
+    color: $lightest-grey;
+    text-decoration: none;
+
+    &:hover {
+      color: $lighter-grey;
+    }
+  }
+}
+
+#post-hero {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+#post-header {
+  text-align: center;
+  margin-bottom: 0;
+  padding: 1em;
+}
+
+.post-title {
+  margin-bottom: 0em;
+  margin-top: 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 0px;
+}
+
+.post-content {
+  padding: 0em;
+}
+
+.wp-block-gallery {
+  list-style: none;
+}
+// ---- Media Queries begin ----
+@include mediaMd {
+  #post-outer {
+    max-width: 80vw;
+    width: 900px;
+    margin-top: 0em;
+    margin-left: auto;
+    margin-right: auto;
+
+    .post-content {
+      margin-top: 0;
+    }
+  }
+  
+  #post-header {
+    width: 60%;
+    min-width: 800px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .post-title {
+    width: 50%;
+  }
+
+  .post-content {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0;
+
+    p,
+    h2,
+    h3,
+    h4,
+    ul,
+    .hightlight {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+}
+
+#hero {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid $dark-grey;
+  border-radius: 10px;
+  background: $darker-grey;
+  font-family: 'Courier New', Courier, monospace;
+
+  .hero_image img {
+    width: 100%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+
+// ---- POST FORMATTING END ----
+@import "home";
+@import "post_list";
+@import "footer";

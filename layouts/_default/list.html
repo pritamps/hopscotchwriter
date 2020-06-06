@@ -1,0 +1,22 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+<main id="post-list">
+  <h1 class="post-title">{{ .Title }}</h1>
+  {{ $paginator := .Paginate ( where .Pages "Type" "post") }}
+  <div class="post-thumbnails">
+    {{ range $paginator.Pages }}
+      {{ partial "post_thumbnail.html" . }}
+    {{ end }}
+  </div>
+  <div class="pagination_links">
+    {{ if $paginator.HasPrev }}
+      <a class="previous_button" href="{{ $paginator.Prev.URL }}" class="pagination__link pagination__link--previous">Newer</a>
+    {{ end }}
+
+    {{ if $paginator.HasNext }}
+      <a class="next_button" href="{{ $paginator.Next.URL }}" class="pagination__link pagination__link--next">Older</a>
+    {{ end }}
+  </div>
+  <!-- {{ template "_internal/pagination.html" . }} -->
+</main>
+{{ partial "footer.html" . }}

@@ -1,0 +1,27 @@
+{{ partial "head.html" . }}
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+
+<main>
+  <section id="post-header">
+    <div id="hero">
+      <div class="hero_image">
+        {{ if isset .Params "featured_image" }}
+        <figure>
+          <img src="{{ .Params.featured_image }}">
+        </figure>
+        {{ end }}
+      </div>
+      <div class="post-title">
+        <h1>{{ .Title }}</h1>
+      </div>
+    </div>
+  </section>
+
+  <section id="post-outer">
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </section>
+</main>
+{{ partial "footer.html" . }}
